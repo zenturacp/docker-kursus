@@ -1,5 +1,4 @@
 # Mini Docker Kursus
-
 Hvad er en Container?
 
 Lidt som i gamle dage med chroot hvor en process tror den har rod i en anden mappe, forskellen er bare at Docker er på kerne niveau og bruger cgroups (lang forklaring - der ikke kommer her)
@@ -11,20 +10,17 @@ Den primære driver er den Overlay Driver docker har udviklet hvor man kan "merg
 ![1-etcher-3.png](https://github.com/zenturacp/docker-kursus/raw/main/images/docker_image_explained.png)
 
 ## Fordele ved Docker
-
 * Kode og Applikation hænger sammen - det er det største Win
-* Mindre komponenter (Mikroservices)
+* Mindre komponenter (Mikroservices) - Alpine Linux (5mb Linux)
 * Du kan køre med minimal applikationer = sikkerhed, for der er færre komponenter du skal vedligeholde
 * Du kan automatisere CI/CD - Dev / Test / Pre Prod / Prod - alt lavet med samme installation
 * Du kan skalere med f.eks. Kubernetes
 
 ## Hvordan kan man få Docker
-
 * Som lokal installation på en Linux
 * Via Docker Desktop (Deres udviklings værktøj)
 
 ## Installation
-
 Fra din favorit Linux installation køre du følgende
 
 ```
@@ -50,7 +46,6 @@ sudo pip install docker-compose
 ```
 
 ## Køre Hello World
-
 ```
 docker run --rm hello-world
 ```
@@ -200,8 +195,10 @@ networks:
   backend:
 ```
 
-## Bygge Docker image
+## Docker Hub
+Hvad er docker Hub?
 
+## Bygge Docker image
 Et Docker image består af en Dockerfile som er en fil der bestemmer hvordan din docker skal bygges. jeg har lavet et eksemple her
 
 Dette er blot en Webserver baseret på NGINX med en Index fil
@@ -223,3 +220,18 @@ FROM nginx:latest
 COPY index.html /usr/share/nginx/html/
 COPY phpinfo.php /usr/share/nginx/html/
 ```
+
+## Cheat Sheet
+* Start Container
+  * docker run container-navn
+* Stop Container
+  * docker stop container-navn
+* List kørende containere
+  * docker ps
+* List alle også stoppede containere
+  * docker ps -a
+* Se logs fra Container
+  * docker logs container-navn
+* Gå ind i Container
+  * docker exec -it container-navn (bash eller sh)
+
