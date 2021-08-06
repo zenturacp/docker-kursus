@@ -203,3 +203,23 @@ networks:
 ## Bygge Docker image
 
 Et Docker image består af en Dockerfile som er en fil der bestemmer hvordan din docker skal bygges. jeg har lavet et eksemple her
+
+Dette er blot en Webserver baseret på NGINX med en Index fil
+
+Her et absolut minimum [eksempel](https://github.com/zenturacp/docker-kursus/tree/main/buildwebserver-static)
+
+```dockerfile
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html/
+COPY phpinfo.php /usr/share/nginx/html/
+```
+
+Hvis man skal bruge PHP findes der en PHP Container fra PHP selv
+
+```dockerfile
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html/
+COPY phpinfo.php /usr/share/nginx/html/
+```

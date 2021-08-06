@@ -1,16 +1,28 @@
 version: "3"
 services:
 
-  mysql:
+  mariadb-server:
     image: mariadb:latest
     container_name: mariadb-server
     restart: always
     networks:
       - backend
-    ports:
-      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=OrangeMakers2021
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    networks:
+      - backend
+    ports:
+      - "80:80"
+    environment:
+      - WORDPRESS_DB_HOST=mariadb-server
+      - WORDPRESS_DB_USER=wpuser
+      - WORDPRESS_DB_PASSWORD=OrangeMakers2021
+      - WORDPRESS_DB_NAME=wpdb
 
   myadmin:
     image: phpmyadmin:latest
@@ -21,14 +33,9 @@ services:
     ports:
       - "8080:80"
     environment:
-      - PMA_HOST=mysql
-      - PMA_USER=root
-      - PMA_PASSWORD=${ROOTPASSWORD}
+      - PMA_HOST=mariadb-server
     depends_on:
-      - "mysql"
+      - "mariadb-server"
 
 networks:
   backend:
-
-# volumes:
-#   db-data:
