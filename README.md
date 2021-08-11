@@ -239,7 +239,7 @@ COPY phpinfo.php /usr/share/nginx/html/
 
 | Hostname | IP adresse    | Username | Password         |
 | -------- | ------------- | -------- | ---------------- |
-| DOCKER1  | 13.95.219.44  | om       | OrangeMakers2021 |
-| DOCKER2  | 13.95.220.70  | om       | OrangeMakers2021 |
-| DOCKER3  | 13.95.223.95  | om       | OrangeMakers2021 |
-| DOCKER4  | 13.95.217.145 | om       | OrangeMakers2021 |
+| DOCKER1  | 20.101.95.199 | om       | OrangeMakers2021 |
+| DOCKER2  | 13.80.171.197 | om       | OrangeMakers2021 |
+| DOCKER3  | 13.80.171.208 | om       | OrangeMakers2021 |
+| DOCKER4  | 13.80.171.248 | om       | OrangeMakers2021 |
