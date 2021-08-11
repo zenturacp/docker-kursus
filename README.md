@@ -235,3 +235,11 @@ COPY phpinfo.php /usr/share/nginx/html/
 * Gå ind i Container
   * docker exec -it container-navn (bash eller sh)
 
+## Maskiner til kursus
+
+| Hostname | IP adresse    | Username | Password         |
+| -------- | ------------- | -------- | ---------------- |
+| DOCKER1  | 13.95.219.44  | om       | OrangeMakers2021 |
+| DOCKER2  | 13.95.220.70  | om       | OrangeMakers2021 |
+| DOCKER3  | 13.95.223.95  | om       | OrangeMakers2021 |
+| DOCKER4  | 13.95.217.145 | om       | OrangeMakers2021 |
